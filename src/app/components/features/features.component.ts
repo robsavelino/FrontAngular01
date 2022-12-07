@@ -8,8 +8,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class FeaturesComponent implements OnInit {
 
-  @Input() public features!: FeatureData;
-  
+  @Input() public features!: FeatureData[];
+
   constructor() { }
 
   ngOnInit() {
