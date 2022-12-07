@@ -12,27 +12,24 @@
 
   <!-- Features -->
   <section id="features" class="my-5">
-    <app-features [features]="data.features.features"></app-features>
+    <app-features [features]="data.features.features" (elementCreated)="onElementCreated($event)"></app-features>
   </section>
   <!-- End Features -->
 
   <!-- About -->
   <section id="about" class="my-5">
-    <app-about
-      [aboutData]="data.about"
-      (elementCreated)="onElementCreated($event)"
-    ></app-about>
+    <app-about [aboutData]="data.about" (elementCreated)="onElementCreated($event)"></app-about>
   </section>
   <!-- End About -->
 
   <!-- Address -->
-  <section  id="address" class="my-5" >
-    <app-address [addressData] = "data.address.data"></app-address>
+  <section id="address" class="my-5">
+    <app-address [addressData]="data.address.data" (elementCreated)="onElementCreated($event)"></app-address>
   </section>
   <!-- End Address -->
 
   <!-- Contact -->
-  <section id="contact" class="my-5" >
+  <section id="contact" class="my-5">
     <app-contact (sendForm)="onContactFormSubmitted($event)"></app-contact>
   </section>
   <!-- End Contact -->

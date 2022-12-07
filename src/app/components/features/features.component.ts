@@ -1,5 +1,5 @@
 import { FeatureData } from './../../models/feature-data.model';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-features',
@@ -7,12 +7,12 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./features.component.css']
 })
 export class FeaturesComponent implements OnInit {
-
   @Input() public features!: FeatureData[];
+  @Output() public elementCreated: EventEmitter<string> = new EventEmitter<string>();
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
+    this.elementCreated.emit('features');
   }
-
 }
