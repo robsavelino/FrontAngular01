@@ -48,17 +48,6 @@ export class AppComponent {
       }
     }
   }
-  public addressData: AddressData = {
-    street: "Rua Luiz Galvez",
-    number: 254,
-    complement: "3º andar, sala 306",
-    state: "AC",
-    city: "Rio Branco",
-    district: "Conjunto Castelo Branco",
-    zipCode: "69911-262"
-  }
-
-
   onElementCreated(element: string): void {
     console.log('Elemento criado:', element);
   }
@@ -66,5 +55,7 @@ export class AppComponent {
   onContactFormSubmitted(formData: ContactFormData): void {
     console.log("Formulário enviado com sucesso!", formData);
   }
-
+  onSearch(element: string): void {
+    console.log('Buscou:', element);
+  }
 }

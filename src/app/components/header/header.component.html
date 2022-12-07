@@ -37,8 +37,9 @@
           type="search"
           placeholder="Search"
           aria-label="Search"
+          #searchInput
         />
-        <a class="btn btn-outline-light" href="#"
+        <a class="btn btn-outline-light" (click)="searchItem(searchInput.value)">
           >Search</a
         >
       </form>
