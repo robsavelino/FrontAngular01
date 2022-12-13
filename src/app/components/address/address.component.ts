@@ -1,5 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { AddressData } from 'src/app/models/address-data.model';
+import { Component, Input, OnInit } from '@angular/core';
 import { AddressSectionData } from 'src/app/models/address-section-data.model';
 
 @Component({
@@ -8,18 +7,11 @@ import { AddressSectionData } from 'src/app/models/address-section-data.model';
   styleUrls: ['./address.component.css']
 })
 export class AddressComponent implements OnInit {
-
-  @Input() public addressData!: AddressData;
-  @Output() public elementCreated: EventEmitter<string> = new EventEmitter<string>();
+  @Input() public addressData!: AddressSectionData;
 
   constructor() { }
 
   ngOnInit() {
-    this.elementCreated.emit('address');
   }
 
 }
-function Import() {
-  throw new Error('Function not implemented.');
-}
-

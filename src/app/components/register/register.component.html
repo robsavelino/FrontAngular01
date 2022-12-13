@@ -1,0 +1,85 @@
+<button type="button" class="btn btn-primary w-auto align-self-center mt-4" data-bs-toggle="modal"
+    data-bs-target="#contactFormModal">Register</button>
+
+<div class="modal fade" id="contactFormModal" tabindex="-1" aria-labelledby="contactFormModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content textColorScheme">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="contactFormModalLabel">Registre-se</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" >
+                    <div class="mb-3 form-group">
+                        <label for="name" class="form-label">Nome</label>
+                        <input type="text" class="form-control" id="name" placeholder="Nome Sobrenome"
+                            formControlName="name" />
+                    </div>
+                    <div class="mb-3 form-group" ngSubmit = "onSubmit()">
+                        <label for="cpf" class="form-label">Cpf</label>
+                        <input type="text" class="form-control" id="name" placeholder="12345678900"
+                            formControlName="cpf" />
+                    </div>
+                    <div class="mb-3 form-group">
+                        <label for="birthDate" class="form-label">Data de nascimento</label>
+                        <input type="text" class="form-control" id="birthDate" placeholder="dd/mm/aaaa"
+                            formControlName="birthDate" />
+                    </div>
+                    <div class="mb-3" formGroupName = "address">
+                        <div class="mb-3 form-group">
+                            <label for="street" class="form-label">Rua</label>
+                            <input type="text" class="form-control" id="street" formControlName="street"/>
+                        </div>
+                        <div class="mb-3 form-group">
+                            <label for="number" class="form-label">Numero</label>
+                            <input type="number" class="form-control" id="number" placeholder="123" formControlName="number"/>
+                        </div>
+                        <div class="mb-3 form-group">
+                            <label for="complement" class="form-label">Complemento</label>
+                            <input type="text" class="form-control" id="complement" placeholder="Bl 01 Apto 123" formControlName="complement" />
+                        </div>
+                        <div class="mb-3 form-group">
+                            <label for="state" class="form-label">Estado</label>
+                            <input type="text" class="form-control" id="state" placeholder="Nome Estado" formControlName="state" />
+                        </div>
+                        <div class="mb-3 form-group">
+                            <label for="city" class="form-label">Cidade</label>
+                            <input type="text" class="form-control" id="city" placeholder="Nome Cidade" formControlName="city" />
+                        </div>
+                        <div class="mb-3 form-group">
+                            <label for="district" class="form-label">Bairro</label>
+                            <input type="text" class="form-control" id="district" placeholder="Nome Bairro" formControlName="district" />
+                        </div>
+                        <div class="mb-3 form-group">
+                            <label for="zipCode" class="form-label">Cep</label>
+                            <input type="text" class="form-control" id="zipCode" placeholder="79.100-000" formControlName="zipCode" />
+                        </div>
+                    </div>
+                    <div class="mb-3" formGroupName = "contact">
+                        <div class="mb-3 form-group">
+                            <label for="phone" class="form-label">Celular</label>
+                            <input type="text" class="form-control" id="phone" placeholder="(xx)91234-1234" formControlName="phone" />
+                        </div>
+                        <div class="mb-3 form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="email@email.com" formControlName="email" />
+                        </div>
+                    </div>
+                    <div class="mb-3 form-group">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="email" class="form-control" id="username" placeholder="Username" formControlName="username" />
+                    </div>
+                    <div class="mb-3 form-group">
+                        <label for="password" class="form-label">Senha</label>
+                        <input type="password" class="form-control" id="password" placeholder="password" formControlName="password" />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        <button type="submit" class="btn btn-primary" [disabled]="!registerForm.valid"
+                          data-bs-dismiss="modal">Enviar</button>
+                      </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

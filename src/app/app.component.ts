@@ -1,5 +1,6 @@
+import { RegisterForm } from './models/register.model';
 import { Component } from '@angular/core';
-import { AddressData } from './models/address-data.model';
+import { Profiles } from './constants/profiles.enum';
 import { AppData } from './models/app-data.model';
 import { ContactFormData } from './models/contact-form-data.model';
 
@@ -13,23 +14,32 @@ export class AppComponent {
   public data: AppData = {
     features: {
       sectionTitle: 'Destaques',
-      features: [{
-        image: './assets/images/feature1.png',
-        title: 'Destaque 1',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dolor arcu, malesuada eget posuere et.'
-      }, {
-        image: './assets/images/feature2.png',
-        title: 'Destaque 2',
-        text: 'Aenean laoreet, felis id sollicitudin fringilla, leo orci iaculis eros, et volutpat nunc lacus ut sapien.'
-      }, {
-        image: './assets/images/feature3.png',
-        title: 'Destaque 3',
-        text: 'Aenean non eros congue leo consectetur fermentum. Quisque ut dignissim tortor, eget porttitor magna.'
-      }, {
-        image: './assets/images/feature4.png',
-        title: 'Destaque 4',
-        text: 'Duis id odio dapibus, finibus tortor eget, cursus nunc. Morbi egestas nisl orci, in cursus ipsum cursus et.'
-      }]
+      features: [
+        {
+          image: 'feature1.png',
+          title: 'Destaque 1',
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dolor arcu, malesuada eget posuere et.',
+          isActive: true
+        },
+        {
+          image: 'feature2.png',
+          title: 'Destaque 2',
+          text: 'Aenean laoreet, felis id sollicitudin fringilla, leo orci iaculis eros, et volutpat nunc lacus ut sapien.',
+          isActive: false
+        },
+        {
+          image: 'feature3.png',
+          title: 'Destaque 3',
+          text: 'Aenean non eros congue leo consectetur fermentum. Quisque ut dignissim tortor, eget porttitor magna.',
+          isActive: true
+        },
+        {
+          image: 'feature4.png',
+          title: 'Destaque 4',
+          text: 'Duis id odio dapibus, finibus tortor eget, cursus nunc. Morbi egestas nisl orci, in cursus ipsum cursus et.',
+          isActive: true
+        }
+      ]
     },
     about: {
       sectionTitle: 'Sobre a empresa',
@@ -46,8 +56,12 @@ export class AppComponent {
         district: "Conjunto Castelo Branco",
         zipCode: "69911-262"
       }
+    },
+    header: {
+      profile: Profiles.EMPLOYEE
     }
   }
+
   onElementCreated(element: string): void {
     console.log('Elemento criado:', element);
   }
@@ -55,7 +69,9 @@ export class AppComponent {
   onContactFormSubmitted(formData: ContactFormData): void {
     console.log("Formulário enviado com sucesso!", formData);
   }
-  onSearch(element: string): void {
-    console.log('Buscou:', element);
+
+  onSearchSubmitted(text: string): void {
+    console.log("Você buscou por:", text);
   }
+
 }
